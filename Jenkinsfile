@@ -1,11 +1,11 @@
 pipeline {
     agent any
     environment {
-        AWS_ACCOUNT_ID=""
+        AWS_ACCOUNT_ID="999134889162"
         AWS_DEFAULT_REGION="us-east-1"
-        IMAGE_REPO_NAME=""
+        IMAGE_REPO_NAME="node-js-app-production-ecr"
         IMAGE_TAG="v1"
-        REPOSITORY_URI = ""
+        REPOSITORY_URI = "999134889162.dkr.ecr.us-east-1.amazonaws.com/node-js-app-production-ecr"
     }
    
     stages {
@@ -29,7 +29,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          sh """cd backend"""
+          sh """cd frontend"""
           dockerImage = docker.build "${IMAGE_REPO_NAME}:${IMAGE_TAG}"
         }
       }
