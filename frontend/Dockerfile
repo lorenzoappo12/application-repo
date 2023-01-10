@@ -1,8 +1,7 @@
 FROM node:16
 
 WORKDIR /app
-COPY package.json /app
-RUN npm ci && npm start
-COPY . /app
-CMD node index.js
-EXPOSE 3000
+ADD package*.json ./
+RUN npm install
+ADD index.js ./
+CMD [ "node", "index.js"]
