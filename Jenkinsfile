@@ -24,7 +24,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          sh """cd /var/lib/jenkins/workspace/backend-app/frontend/ && docker build -t ${IMAGE_REPO_NAME}:${IMAGE_TAG}"""
+          sh """cd /var/lib/jenkins/workspace/backend-app/frontend/ && docker build -t ${IMAGE_REPO_NAME}:${IMAGE_TAG} ."""
           
         }
       }
