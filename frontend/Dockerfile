@@ -1,19 +1,17 @@
 FROM node:16
 
-#EXPOSE 3000
+EXPOSE 3000
 
 
-#WORKDIR /usr/app
+WORKDIR /usr/app
 
 COPY package.json .
 
-#RUN npm i --quiet
+RUN npm i --quiet
 
-#COPY . .
+COPY . .
 
-RUN npm ci
-RUN npm start
 
-#RUN npm install
+RUN npm install
 
-#CMD ["node", "src/index.js"]
+CMD ["node", "start"]
