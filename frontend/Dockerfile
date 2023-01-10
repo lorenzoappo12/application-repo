@@ -1,17 +1,8 @@
 FROM node:16
 
+WORKDIR /app
+COPY package.json /app
+RUN npm ci --only=production && npm cache clean --force
+COPY . /app
+CMD node index.js
 EXPOSE 3000
-
-
-WORKDIR /usr/app
-
-COPY package.json .
-
-RUN npm i --quiet
-
-COPY . .
-
-
-RUN npm install
-
-CMD ["node", "start"]
