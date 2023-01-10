@@ -1,5 +1,7 @@
 FROM node:16
 
+EXPOSE 3000
+
 WORKDIR /usr/app
 
 COPY package.json .
@@ -10,4 +12,4 @@ COPY . .
 
 RUN npm install
 
-CMD ["node", "index.js"]
+CMD ["node", "src/index.js"]
