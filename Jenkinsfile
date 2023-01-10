@@ -4,7 +4,7 @@ pipeline {
         AWS_ACCOUNT_ID="999134889162"
         AWS_DEFAULT_REGION="us-east-1"
         IMAGE_REPO_NAME="node-js-app-production-ecr"
-        IMAGE_TAG="v1"
+        IMAGE_TAG="latest"
         REPOSITORY_URI = "999134889162.dkr.ecr.us-east-1.amazonaws.com/node-js-app-production-ecr"
     }
    
